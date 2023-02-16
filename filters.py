@@ -96,21 +96,20 @@ def hsv(img):
 
 @st.cache_data
 def edge(img):
-    #convert image to grayscale
-    img_gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+	#convert image to grayscale
+	img_gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
-    #cleaning up the image using Gaussian blur
-    img_gray_blur=cv2.GaussianBlur(img_gray,(5,5),0)
+	#cleaning up the image using Gaussian blur
+	img_gray_blur=cv2.GaussianBlur(img_gray,(5,5),0)
 
-    #extract edges
+	#extract edges
 
-    canny_edges=cv2.Canny(img_gray_blur,10,70)
+	canny_edges=cv2.Canny(img_gray_blur,10,70)
 
-    #do an invert binarize the image
-    ret, mask=cv2.threshold(canny_edges,70,255,cv2.THRESH_BINARY_INV)
-    fg = cv2.bitwise_or(img, img, mask=mask)
-    mask = cv2.bitwise_not(mask)
-    background = np.full(img.shape, 255, dtype=np.uint8)
-    bk = cv2.bitwise_or(background, background, mask=mask)
-    result = cv2.bitwise_or(fg, bk)
-    return result
+	#do an invert binarize the image
+	ret, mask=cv2.threshold(canny_edges,70,255,cv2.THRESH_BINARY_INV)
+	fg = cv2.bitwise_or(img, img, mask=mask)
+	mask = cv2.bitwise_not(mask)
+	mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
+
+	return mask
