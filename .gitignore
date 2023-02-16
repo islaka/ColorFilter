@@ -1,3 +1,5 @@
 *.jpg
 *.png
 *.pyc
+test.py
+test.ipynb
