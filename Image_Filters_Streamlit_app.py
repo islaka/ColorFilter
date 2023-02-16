@@ -49,7 +49,8 @@ if uploaded_file is not None:
                             'Oil Painting',
                             'Cartoon',
                             'Watercolor',
-                            'HSV'
+                            'HSV',
+                            'Edge'
                          ))
 
     # Define columns for thumbnail images.
@@ -103,6 +104,8 @@ if uploaded_file is not None:
         output = watercolor(img)
     elif option == "HSV":
         output = hsv(img)
+    elif option == "Edge":
+        output = edge(img)
 
     with output_col:
         if output_flag == 1:
