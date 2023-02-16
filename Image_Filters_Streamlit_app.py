@@ -1,11 +1,3 @@
-# Checkout this tutorial
-# https://blog.loginradius.com/engineering/guest-post/opencv-web-app-with-streamlit/
-# Online deployment:
-# https://towardsdatascience.com/3-easy-ways-to-deploy-your-streamlit-web-app-online-7c88bb1024b1
-# https://www.youtube.com/watch?v=4SO3CUWPYf0
-
-# Run: streamlit run Image_Filters_Streamlit_app.py
-
 import io
 import base64
 import cv2
