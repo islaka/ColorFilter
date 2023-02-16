@@ -71,12 +71,6 @@ def photoSaturation(img,sat):
 	return saturated
 
 @st.cache_data
-def oilPainting(img):
-	# oil painting effect
-	oilPainted = cv2.xphoto.oilPainting(img, 7, 1)
-	return oilPainted
-
-@st.cache_data
 def cartoonize(img):
 	# cartoonize the image
 	cartoonized = cv2.stylization(img, sigma_s=150, sigma_r=0.25)

@@ -38,7 +38,6 @@ if uploaded_file is not None:
                             'Pencil Sketch',
                             'Color Sketch',
                             'Saturation',
-                            'Oil Painting',
                             'Cartoon',
                             'Watercolor',
                             'HSV',
@@ -88,8 +87,6 @@ if uploaded_file is not None:
     elif option == "Saturation":
         sat = st.slider('Blur kernel size', 0.0, 10.0, 1.0, step=0.01)
         output = photoSaturation(img,sat)
-    elif option == "Oil Painting":
-        output = oilPainting(img)
     elif option == "Cartoon":
         output = cartoonize(img)
     elif option == "Watercolor":
