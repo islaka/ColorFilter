@@ -112,4 +112,4 @@ def edge(img):
 	mask = cv2.bitwise_not(mask)
 	mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
 
-	return mask	
+	return mask

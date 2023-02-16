@@ -86,7 +86,7 @@ if uploaded_file is not None:
         output = color_sketch(img, ksize)
         color = 'GRAY'
     elif option == "Saturation":
-        sat = st.slider('Blur kernel size', 0.0, 10.0, 5.0, step=0.2)
+        sat = st.slider('Blur kernel size', 0.0, 10.0, 1.0, step=0.01)
         output = photoSaturation(img,sat)
     elif option == "Oil Painting":
         output = oilPainting(img)
