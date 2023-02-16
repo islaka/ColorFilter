@@ -32,6 +32,7 @@ def sepia(img):
 	img_sepia = cv2.transform(img_sepia, np.matrix([[0.393, 0.769, 0.189], 
 													[0.349, 0.686, 0.168], 
 													[0.272, 0.534, 0.131]]))
+
 	# Clip values to the range [0, 255].
 	img_sepia = np.clip(img_sepia, 0, 255)
 	img_sepia = np.array(img_sepia, dtype = np.uint8)
@@ -44,6 +45,7 @@ def pencil_sketch(img, ksize=5):
 	# Write your code here to create the pencil sketch effect
 	img_blur = cv2.GaussianBlur(img, (ksize,ksize), 0, 0)
 	img_sketch, _ = cv2.pencilSketch(img_blur)
+	
 	return img_sketch
 
 @st.cache_data
